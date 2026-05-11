@@ -1,0 +1,7 @@
+dry_run: true              # Default safe; flip to false or pass --apply
+match_window_days: 5       # ± days between ship date and transaction date
+memo_template: "{items} (#{order_id}) 🤖"
+item_truncate_chars: 30    # Max chars per item name when truncating
+memo_max_chars: 200        # YNAB memo hard limit
+imap_search_since_days: 14 # How far back to fetch emails each run
+ynab_lookback_days: 14     # How far back to fetch unapproved txns

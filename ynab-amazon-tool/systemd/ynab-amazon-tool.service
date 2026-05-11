@@ -1,0 +1,16 @@
+[Unit]
+Description=YNAB Amazon Transaction Enricher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/ynab-amazon-tool
+ExecStart=uv run ynab-amazon-tool --apply
+StandardOutput=journal
+StandardError=journal
+# Load secrets from .env in the project directory
+EnvironmentFile=%h/ynab-amazon-tool/.env
+
+[Install]
+WantedBy=default.target
